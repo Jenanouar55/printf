@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_perc - prints a percent character
+ * print_pe - prints a % character
  * @arg: unused argument (va_list)
- * @i: pointer to count variable
+ * @dest: pointer to sum up variable
  */
-void print_perc(va_list arg, int *i)
+void print_pe(va_list arg, int *dest)
 {
 	(void)arg;
 	_putchar(37);
-	(*i)++;
+	(*dest)++;
 }

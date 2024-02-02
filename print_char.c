@@ -2,12 +2,12 @@
 /**
  * print_char - prints a character
  * @arg: argument list
- * @i: pointer to count variable
+ * @dest: pointer to sum up variable
  */
-void print_char(va_list arg, int *i)
+void print_char(va_list arg, int *dest)
 {
-	char x = va_arg(arg, int);
+	int c = va_arg(arg, int);
 
-	_putchar(x);
-	(*i)++;
+	_putchar(c);
+	(*dest)++;
 }

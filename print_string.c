@@ -3,19 +3,16 @@
 /**
  * print_string - prints a string
  * @arg: argument list
- * @i: pointer to count variable
+ * @dest: pointer to sum up variable
  */
-void print_string(va_list arg, int *i)
+void print_string(va_list arg, int *dest)
 {
-	int x = 0;
-	char *str = va_arg(arg, char *);
+	char *str = va_arg(arg, char*);
 
-	if (str == NULL)
-		str = "(null)";
-	while (str[x] != '\0')
+	while (*str != '\0')
 	{
-		_putchar(str[x]);
-		(*i)++;
-		x++;
+		_putchar(*str);
+		str++;
+		(*dest)++;
 	}
 }

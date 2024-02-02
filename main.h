@@ -7,10 +7,10 @@
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void print_char(va_list arg, int *i);
-void print_string(va_list arg, int *i);
-void print_perc(va_list arg, int *i);
-void print_int(va_list arg, int *i);
+void print_char(va_list arg, int *dest);
+void print_string(va_list arg, int *dest);
+void print_pe(va_list arg, int *dest);
+void print_int(va_list arg, int *dest);
 
 /**
  * struct specifier - structure for specifiers

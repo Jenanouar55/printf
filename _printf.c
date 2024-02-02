@@ -1,49 +1,49 @@
 #include <stdarg.h>
 #include "main.h"
+
 /**
- * _printf - Produces output according to a format.
- * @format: Character string with optional format specifiers.
- * Return: Number of characters printed.
+ * _printf - produces output according to a format
+ * @format: character string
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	int x = 0, dest = 0;
-	int y;
+	int i = 0, dest = 0, y;
 	va_list arg;
-	spec specifiers[] = {{'c', print_char}, {'s', print_string},
-	{'%', print_perc}, {'d', print_int}, {'i', print_int}, {'\0', NULL}};
 
+	spec specifiers[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_pe},
+		{'d', print_int},
+		{'i', print_int},
+		{'\0', NULL}
+	};
 	va_start(arg, format);
 	if (format == NULL)
-	{
 		return (-1);
-	}
-	for (x = 0; format[x] != '\0'; x++)
+
+	for (; format[i] != '\0'; i++)
 	{
-		if (format[x] == '%')
+		if (format[i] == '%')
 		{
-			for (x++, y = 0; specifiers[y].type != '\0'; y++)
+			i++;
+			for (y = 0; specifiers[y].type != '\0'; y++)
 			{
-				if (format[x] == specifiers[y].type)
+				if (format[i] == specifiers[y].type)
 				{
 					specifiers[y].handler(arg, &dest);
-				}
-				else if (specifiers[y].type == '\0')
-				{
-					_putchar('%');
-					_putchar(format[x]);
-					dest += 2;
 					break;
 				}
 			}
 		}
 		else
 		{
-			_putchar(format[x]);
+			_putchar(format[i]);
 			dest++;
 		}
 	}
+
 	va_end(arg);
 	return (dest);
 }
-

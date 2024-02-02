@@ -30,7 +30,9 @@ int _printf(const char *format, ...)
 				}
 				else if (specifiers[y].type == '\0')
 				{
-					dest++;
+					_putchar('%');
+					_putchar(format[x]);
+					dest += 2;
 					break;
 				}
 			}

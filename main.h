@@ -11,6 +11,7 @@ void print_char(va_list arg, int *i);
 void print_string(va_list arg, int *i);
 void print_perc(va_list arg, int *i);
 void print_int(va_list arg, int *i);
+int valid_specifier(char c);
 
 /**
  * struct specifier - structure for specifiers

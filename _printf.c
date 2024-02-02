@@ -22,6 +22,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[x] == '%')
 		{
+			for (x++; format[x] != '\0' && !valid_specifier(format[x]); x++)
+			{
+				_putchar(format[x]);
+				dest++;
+			}
+
 			for (x++, y = 0; specifiers[y].type != '\0'; y++)
 			{
 				if (format[x] == specifiers[y].type)
